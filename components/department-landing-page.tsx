@@ -76,40 +76,51 @@ export function DepartmentLandingPage({ department }: { department: DepartmentPa
             </h2>
           </div>
           <div className="space-y-10">
-            <article className="border-b border-black/10 pb-8">
-              <h3 className="pneu-sans mb-4 text-[23px] font-bold leading-tight tracking-[-0.03em] text-[#111]">
-                Réparation sur place ou à domicile
-              </h3>
-              <p className="pneu-sans max-w-[760px] text-[15px] leading-7 text-[#555]">
-                En cas de crevaison sur la route, à domicile ou au travail, l’intervention commence par l’examen du pneu et de la situation. Selon le diagnostic, une réparation peut être réalisée sur place ; si le pneu ne peut pas être réparé, son remplacement peut être envisagé dans le {department.name}.
-              </p>
-            </article>
-            <article className="border-b border-black/10 pb-8">
-              <h3 className="pneu-sans mb-4 text-[23px] font-bold leading-tight tracking-[-0.03em] text-[#111]">
-                Montage et remplacement selon l’état du pneu
-              </h3>
-              <p className="pneu-sans max-w-[760px] text-[15px] leading-7 text-[#555]">
-                Les services couvrent le montage et le remplacement des pneus, en plus de la réparation. Le montage peut inclure la vérification de l’équilibrage, du parallélisme et de la pression, selon l’intervention et le véhicule.
-              </p>
-            </article>
-            <article>
-              <h3 className="pneu-sans mb-4 text-[23px] font-bold leading-tight tracking-[-0.03em] text-[#111]">
-                Voitures, utilitaires, motos et autres véhicules
-              </h3>
-              <ul className="grid gap-3 sm:grid-cols-2">
-                {[
+            {(department.interventionSections ?? [
+              {
+                title: "Réparation sur place ou à domicile",
+                paragraphs: [
+                  `En cas de crevaison sur la route, à domicile ou au travail, l’intervention commence par l’examen du pneu et de la situation. Selon le diagnostic, une réparation peut être réalisée sur place ; si le pneu ne peut pas être réparé, son remplacement peut être envisagé dans le ${department.name}.`,
+                ],
+              },
+              {
+                title: "Montage et remplacement selon l’état du pneu",
+                paragraphs: [
+                  "Les services couvrent le montage et le remplacement des pneus, en plus de la réparation. Le montage peut inclure la vérification de l’équilibrage, du parallélisme et de la pression, selon l’intervention et le véhicule.",
+                ],
+              },
+              {
+                title: "Voitures, utilitaires, motos et autres véhicules",
+                paragraphs: [],
+                points: [
                   "Voitures et véhicules utilitaires",
                   "Motos et scooters",
                   "Camions et poids lourds selon le service",
                   "Pneu à réparer, monter ou remplacer",
-                ].map((item) => (
-                  <li className="pneu-sans flex items-start gap-3 text-[14px] leading-6 text-[#444]" key={item}>
-                    <span aria-hidden="true" className="mt-[10px] size-1.5 shrink-0 rounded-full bg-[#ef5b27]" />
-                    {item}
-                  </li>
+                ],
+              },
+            ]).map((section, index, sections) => (
+              <article className={index < sections.length - 1 ? "border-b border-black/10 pb-8" : ""} key={section.title}>
+                <h3 className="pneu-sans mb-4 text-[23px] font-bold leading-tight tracking-[-0.03em] text-[#111]">
+                  {section.title}
+                </h3>
+                {section.paragraphs.map((paragraph) => (
+                  <p className="pneu-sans mb-4 max-w-[760px] text-[15px] leading-7 text-[#555] last:mb-0" key={paragraph}>
+                    {paragraph}
+                  </p>
                 ))}
-              </ul>
-            </article>
+                {section.points && (
+                  <ul className="grid gap-3 sm:grid-cols-2">
+                    {section.points.map((item) => (
+                      <li className="pneu-sans flex items-start gap-3 text-[14px] leading-6 text-[#444]" key={item}>
+                        <span aria-hidden="true" className="mt-[10px] size-1.5 shrink-0 rounded-full bg-[#ef5b27]" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -156,6 +167,34 @@ export function DepartmentLandingPage({ department }: { department: DepartmentPa
           </div>
         </div>
       </section>
+
+      {department.faqs && (
+        <section className="px-[max(5.4vw,24px)] py-16 md:py-20" aria-labelledby="department-faq-title">
+          <div className="mx-auto grid max-w-[1320px] gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24">
+            <div>
+              <p className="pneu-sans mb-5 flex items-center gap-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#555]">
+                <span aria-hidden="true" className="h-[2px] w-9 bg-[#e51d2a]" />
+                Questions fréquentes
+              </p>
+              <h2 className="pneu-sans text-[clamp(32px,4vw,50px)] font-bold leading-[1.03] tracking-[-0.045em] text-[#090909]" id="department-faq-title">
+                Dépannage pneu à {department.name} : vos questions
+              </h2>
+            </div>
+            <div>
+              {department.faqs.map(({ question, answer }) => (
+                <details className="group border-t border-[#dededb]" key={question}>
+                  <summary className="pneu-sans flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-[15px] font-semibold text-[#171717] transition-colors hover:text-[#d71920] [&::-webkit-details-marker]:hidden md:text-[16px]">
+                    {question}
+                    <span aria-hidden="true" className="text-[24px] font-normal leading-none text-[#e61d2a] transition-transform group-open:rotate-45">+</span>
+                  </summary>
+                  <p className="pneu-sans max-w-[760px] pb-5 pr-10 text-[14px] leading-7 text-[#555]">{answer}</p>
+                </details>
+              ))}
+              <div className="border-t border-[#dededb]" />
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-[#e61d2a] px-[max(5.4vw,24px)] py-8 text-white md:py-10">
         <div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-between gap-6">
