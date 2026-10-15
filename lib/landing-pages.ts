@@ -43,8 +43,8 @@ export const servicePages: ServicePageContent[] = [
         ],
       },
     ],
-    image: "/images/pneu-tire-service.png",
-    imageAlt: "Pneu et jante dans un atelier automobile",
+    image: "/images/pneu-service-dimanche.png",
+    imageAlt: "Technicien examinant un pneu crevé dans un atelier",
   },
   {
     slug: "montage-changement-pneu-sur-place",
@@ -72,8 +72,8 @@ export const servicePages: ServicePageContent[] = [
         ],
       },
     ],
-    image: "/images/pneu-process-banner.png",
-    imageAlt: "Équipement de montage de pneu dans un atelier",
+    image: "/images/pneu-service-montage-mobile.png",
+    imageAlt: "Technicien montant un pneu au bord de la route",
   },
   {
     slug: "depannage-pneu-domicile",
@@ -102,8 +102,8 @@ export const servicePages: ServicePageContent[] = [
         ],
       },
     ],
-    image: "/images/pneu-contact-service.png",
-    imageAlt: "Technicien intervenant sur une roue de véhicule",
+    image: "/images/pneu-service-domicile.png",
+    imageAlt: "Technicien dépannant un pneu dans une allée résidentielle",
   },
   {
     slug: "reparation-pneus-engin-chantier",
@@ -131,8 +131,8 @@ export const servicePages: ServicePageContent[] = [
         ],
       },
     ],
-    image: "/images/pneu-tire-service.png",
-    imageAlt: "Pneu robuste d’un véhicule professionnel",
+    image: "/images/pneu-service-chantier.png",
+    imageAlt: "Technicien examinant le pneu d’un engin de chantier",
   },
   {
     slug: "piece-auto",
@@ -160,8 +160,8 @@ export const servicePages: ServicePageContent[] = [
         ],
       },
     ],
-    image: "/images/pneu-contact-service.png",
-    imageAlt: "Équipement et pièces dans un atelier automobile",
+    image: "/images/pneu-service-piece-auto.png",
+    imageAlt: "Pièces automobiles préparées sur un établi d’atelier",
   },
   {
     slug: "fixation-pare-brise",
@@ -189,8 +189,8 @@ export const servicePages: ServicePageContent[] = [
         ],
       },
     ],
-    image: "/images/pneu-contact-service.png",
-    imageAlt: "Intervention dans un atelier de réparation automobile",
+    image: "/images/pneu-service-pare-brise.png",
+    imageAlt: "Technicien fixant un pare-brise dans un atelier automobile",
   },
 ];
 

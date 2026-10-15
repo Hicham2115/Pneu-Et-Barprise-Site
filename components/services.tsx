@@ -7,6 +7,7 @@ import {
   Wrench,
   type LucideIcon,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const services: {
@@ -14,6 +15,8 @@ const services: {
   description: string;
   href: string;
   icon: LucideIcon;
+  image: string;
+  imageAlt: string;
 }[] = [
   {
     title: "Réparation de pneu",
@@ -21,6 +24,8 @@ const services: {
       "Une crevaison ? Nous évaluons votre pneu et intervenons sur place quand sa réparation est possible.",
     href: "/services/reparation-pneu-dimanche",
     icon: Wrench,
+    image: "/images/pneu-service-dimanche.png",
+    imageAlt: "Technicien examinant un pneu crevé dans un atelier",
   },
   {
     title: "Montage et changement",
@@ -28,6 +33,8 @@ const services: {
       "Remplacement et montage de vos pneus avec un équipement professionnel.",
     href: "/services/montage-changement-pneu-sur-place",
     icon: Disc3,
+    image: "/images/pneu-service-montage-mobile.png",
+    imageAlt: "Technicien montant un pneu au bord de la route",
   },
   {
     title: "Dépannage à domicile",
@@ -35,6 +42,8 @@ const services: {
       "Une assistance sur place, à domicile ou là où votre véhicule est immobilisé.",
     href: "/services/depannage-pneu-domicile",
     icon: Truck,
+    image: "/images/pneu-service-domicile.png",
+    imageAlt: "Technicien dépannant un pneu dans une allée résidentielle",
   },
   {
     title: "Pneus d’engins de chantier",
@@ -42,6 +51,8 @@ const services: {
       "Un service adapté aux pneus d’engins de chantier et aux véhicules professionnels.",
     href: "/services/reparation-pneus-engin-chantier",
     icon: Construction,
+    image: "/images/pneu-service-chantier.png",
+    imageAlt: "Technicien examinant le pneu d’un engin de chantier",
   },
   {
     title: "Pièce auto",
@@ -49,6 +60,8 @@ const services: {
       "Des pièces auto pour répondre à vos besoins d’entretien et de remplacement.",
     href: "/services/piece-auto",
     icon: CarFront,
+    image: "/images/pneu-service-piece-auto.png",
+    imageAlt: "Pièces automobiles préparées sur un établi d’atelier",
   },
   {
     title: "Fixation des pare-brises",
@@ -56,6 +69,8 @@ const services: {
       "Un accompagnement pour la fixation et la remise en place de pare-brises.",
     href: "/services/fixation-pare-brise",
     icon: PanelsTopLeft,
+    image: "/images/pneu-service-pare-brise.png",
+    imageAlt: "Technicien fixant un pare-brise dans un atelier automobile",
   },
 ];
 
@@ -87,17 +102,27 @@ export function Services() {
         </div>
 
         <div className="grid border-l border-t border-[#dededb] sm:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ title, description, href, icon: Icon }) => (
+          {services.map(({ title, description, href, icon: Icon, image, imageAlt }) => (
             <Link
-              className="group min-h-[230px] border-b border-r border-[#dededb] bg-white/60 p-7 transition-colors duration-200 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#e51d2a] md:p-8"
+              className="group min-h-[330px] border-b border-r border-[#dededb] bg-white/60 transition-colors duration-200 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#e51d2a]"
               href={href}
               key={href}
             >
-              <Icon
-                aria-hidden="true"
-                className="mb-6 size-8 text-[#e51d2a] transition-transform duration-200 group-hover:-translate-y-1"
-                strokeWidth={1.8}
-              />
+              <div className="relative h-[150px] overflow-hidden bg-[#e8e8e6]">
+                <Image
+                  alt={imageAlt}
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  fill
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                  src={image}
+                />
+              </div>
+              <div className="p-7 md:p-8">
+                <Icon
+                  aria-hidden="true"
+                  className="mb-5 size-7 text-[#e51d2a] transition-transform duration-200 group-hover:-translate-y-1"
+                  strokeWidth={1.8}
+                />
               <h3 className="pneu-sans mb-3 text-[18px] font-bold leading-6 text-[#111]">
                 {title}
               </h3>
@@ -108,6 +133,7 @@ export function Services() {
                 aria-hidden="true"
                 className="mt-5 block h-[2px] w-8 bg-[#e51d2a] transition-[width] duration-200 group-hover:w-12"
               />
+              </div>
             </Link>
           ))}
         </div>
