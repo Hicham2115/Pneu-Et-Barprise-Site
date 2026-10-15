@@ -26,7 +26,7 @@ export function ContactCta() {
   return (
     <section
       aria-labelledby="contact-cta-title"
-      className="bg-[#f5f5f3] px-[max(5.4vw,24px)] py-14 md:py-20"
+      className="contact-section bg-[#f5f5f3] px-[max(5.4vw,24px)] py-14 md:py-20"
       id="contact"
     >
       <div className="mx-auto grid max-w-[1320px] overflow-hidden bg-white shadow-[0_24px_70px_-45px_rgba(0,0,0,0.35)] lg:grid-cols-[1fr_0.9fr]">
@@ -48,19 +48,19 @@ export function ContactCta() {
           <form className="grid gap-3 sm:grid-cols-2" onSubmit={handleSubmit}>
             <label className="pneu-sans grid gap-1.5 text-[12px] font-semibold text-[#333]">
               Votre nom
-              <input className="min-h-11 border border-black/15 bg-white px-3 text-[14px] font-normal outline-none transition-colors placeholder:text-[#999] focus:border-[#e61d2a] focus:ring-1 focus:ring-[#e61d2a]" name="name" placeholder="Nom" required />
+              <input className="min-h-11 border border-black/15 bg-white px-3 text-[14px] font-normal outline-none transition-colors placeholder:text-[#999] focus:border-[#777] focus:outline-none focus:ring-0" name="name" placeholder="Nom" required />
             </label>
             <label className="pneu-sans grid gap-1.5 text-[12px] font-semibold text-[#333]">
               Téléphone
-              <input className="min-h-11 border border-black/15 bg-white px-3 text-[14px] font-normal outline-none transition-colors placeholder:text-[#999] focus:border-[#e61d2a] focus:ring-1 focus:ring-[#e61d2a]" name="phone" placeholder="Votre numéro" required type="tel" />
+              <input className="min-h-11 border border-black/15 bg-white px-3 text-[14px] font-normal outline-none transition-colors placeholder:text-[#999] focus:border-[#777] focus:outline-none focus:ring-0" name="phone" placeholder="Votre numéro" required type="tel" />
             </label>
             <label className="pneu-sans grid gap-1.5 text-[12px] font-semibold text-[#333]">
               Où se trouve le véhicule ?
-              <input className="min-h-11 border border-black/15 bg-white px-3 text-[14px] font-normal outline-none transition-colors placeholder:text-[#999] focus:border-[#e61d2a] focus:ring-1 focus:ring-[#e61d2a]" name="location" placeholder="Ville ou adresse" required />
+              <input className="min-h-11 border border-black/15 bg-white px-3 text-[14px] font-normal outline-none transition-colors placeholder:text-[#999] focus:border-[#777] focus:outline-none focus:ring-0" name="location" placeholder="Ville ou adresse" required />
             </label>
             <label className="pneu-sans grid gap-1.5 text-[12px] font-semibold text-[#333]">
               Votre besoin
-              <input className="min-h-11 border border-black/15 bg-white px-3 text-[14px] font-normal outline-none transition-colors placeholder:text-[#999] focus:border-[#e61d2a] focus:ring-1 focus:ring-[#e61d2a]" name="problem" placeholder="Crevaison, changement…" required />
+              <input className="min-h-11 border border-black/15 bg-white px-3 text-[14px] font-normal outline-none transition-colors placeholder:text-[#999] focus:border-[#777] focus:outline-none focus:ring-0" name="problem" placeholder="Crevaison, changement…" required />
             </label>
             <button className="pneu-sans group mt-1 inline-flex min-h-[50px] items-center justify-center gap-3 bg-[#e61d2a] px-5 text-[14px] font-semibold text-white transition-colors hover:bg-[#c81521] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e61d2a] sm:col-span-2 sm:justify-self-start" type="submit">
               Envoyer la demande sur WhatsApp

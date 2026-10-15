@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/comp-577";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import "lenis/dist/lenis.css";
 import "./globals.css";
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <SmoothScroll>
           <Header />
+          <ScrollReveal />
           {children}
         </SmoothScroll>
       </body>
