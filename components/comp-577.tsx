@@ -65,7 +65,7 @@ export default function Component() {
           <NavigationMenu className="max-[760px]:hidden" viewport={false}>
             <NavigationMenuList className="gap-2">
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="pneu-sans relative rounded-none !bg-transparent px-4 py-3 !text-[13px] !font-semibold text-[#191919] shadow-none transition-colors hover:text-[#d71920] focus:text-[#d71920] data-[state=open]:text-[#d71920] after:absolute after:bottom-2 after:left-4 after:right-8 after:h-px after:origin-left after:scale-x-0 after:bg-[#e51d2a] after:transition-transform after:duration-200 hover:after:scale-x-100 data-[state=open]:after:scale-x-100">
+                <NavigationMenuTrigger className="pneu-sans relative rounded-none !bg-transparent px-4 py-3 !text-[13px] !font-semibold text-[#191919] shadow-none transition-colors hover:text-[#d71920] focus:text-[#d71920] data-[state=open]:text-[#d71920] after:absolute after:bottom-2 after:left-4 after:right-8 after:h-[2px] after:origin-left after:scale-x-0 after:bg-[#e51d2a] after:transition-transform after:duration-200 hover:after:scale-x-100 focus-visible:after:scale-x-100 data-[state=open]:after:scale-x-100">
                   SERVICES
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="max-h-[min(70svh,620px)] w-[min(calc(100vw-24px),720px)] overflow-y-auto rounded-[2px] border border-black/10 border-t-2 border-t-[#e51d2a] bg-white p-4 shadow-[0_18px_48px_rgba(0,0,0,0.16)]">
@@ -93,7 +93,7 @@ export default function Component() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="pneu-sans relative rounded-none !bg-transparent px-4 py-3 !text-[13px] !font-semibold text-[#191919] shadow-none transition-colors hover:text-[#d71920] focus:text-[#d71920] data-[state=open]:text-[#d71920] after:absolute after:bottom-2 after:left-4 after:right-8 after:h-px after:origin-left after:scale-x-0 after:bg-[#e51d2a] after:transition-transform after:duration-200 hover:after:scale-x-100 data-[state=open]:after:scale-x-100">
+                <NavigationMenuTrigger className="pneu-sans relative rounded-none !bg-transparent px-4 py-3 !text-[13px] !font-semibold text-[#191919] shadow-none transition-colors hover:text-[#d71920] focus:text-[#d71920] data-[state=open]:text-[#d71920] after:absolute after:bottom-2 after:left-4 after:right-8 after:h-[2px] after:origin-left after:scale-x-0 after:bg-[#e51d2a] after:transition-transform after:duration-200 hover:after:scale-x-100 focus-visible:after:scale-x-100 data-[state=open]:after:scale-x-100">
                   ÎLE-DE-FRANCE
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="max-h-[min(70svh,620px)] !w-[min(520px,calc(100vw-48px))] overflow-y-auto rounded-[2px] border border-black/10 border-t-2 border-t-[#e51d2a] bg-white p-4 shadow-[0_18px_48px_rgba(0,0,0,0.16)]">
@@ -123,7 +123,7 @@ export default function Component() {
               {mobileLinks.map((link) => (
                 <NavigationMenuItem key={link.label}>
                   <NavigationMenuLink
-                    className="pneu-sans group relative rounded-none px-4 py-3 text-[14px] font-semibold text-[#191919] transition-[color,transform] duration-200 hover:-translate-y-0.5 hover:bg-transparent hover:text-[#d71920] focus:bg-transparent focus:text-[#d71920] after:absolute after:inset-x-4 after:bottom-2 after:h-px after:origin-left after:scale-x-0 after:bg-[#e51d2a] after:transition-transform after:duration-200 hover:after:scale-x-100 focus-visible:after:scale-x-100"
+                    className="pneu-sans group relative rounded-none px-4 py-3 text-[14px] font-semibold text-[#191919] transition-[color,transform] duration-200 hover:-translate-y-0.5 hover:bg-transparent hover:text-[#d71920] focus:bg-transparent focus:text-[#d71920] after:absolute after:inset-x-4 after:bottom-2 after:h-[2px] after:origin-left after:scale-x-0 after:bg-[#e51d2a] after:transition-transform after:duration-200 hover:after:scale-x-100 focus-visible:after:scale-x-100"
                     href={link.href}
                   >
                     {link.label}

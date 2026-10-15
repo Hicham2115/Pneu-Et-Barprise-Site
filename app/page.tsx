@@ -5,6 +5,8 @@ import { Services } from "@/components/services";
 import { TireAdvice } from "@/components/tire-advice";
 import { WhyPneu } from "@/components/why-pneu";
 import { ContactCta } from "@/components/contact-cta";
+import { Partners } from "@/components/partners";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <WhyPneu />
       <Faq />
       <ContactCta />
+      <Partners />
+      <Footer />
     </main>
   );
 }
