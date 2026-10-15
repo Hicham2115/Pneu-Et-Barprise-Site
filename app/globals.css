@@ -96,6 +96,26 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: var(--red) var(--paper);
+  scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+
+html::-webkit-scrollbar-thumb {
+  border: 2px solid var(--paper);
+  border-radius: 999px;
+  background: var(--red);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--red-dark);
 }
 
 body {
