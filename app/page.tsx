@@ -4,6 +4,7 @@ import { HowItWorks } from "@/components/how-it-works";
 import { Services } from "@/components/services";
 import { TireAdvice } from "@/components/tire-advice";
 import { WhyPneu } from "@/components/why-pneu";
+import { ContactCta } from "@/components/contact-cta";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <TireAdvice />
       <WhyPneu />
       <Faq />
+      <ContactCta />
     </main>
   );
 }
