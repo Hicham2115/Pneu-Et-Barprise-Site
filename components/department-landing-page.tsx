@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import { departmentPages, servicePages, type DepartmentPageContent } from "@/lib/landing-pages";
@@ -129,14 +130,27 @@ export function DepartmentLandingPage({ department }: { department: DepartmentPa
               Découvrir l’ensemble des services <ArrowRight aria-hidden="true" className="size-4" />
             </Link>
           </div>
-          <div className="grid gap-px bg-black/10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {servicePages.map((service, index) => (
-              <Link className="group flex min-h-[190px] flex-col justify-between bg-white p-6 transition-colors hover:bg-[#fffafa] sm:p-7" href={`/services/${service.slug}`} key={service.slug}>
-                <span className="pneu-sans text-[11px] font-semibold tracking-[0.2em] text-[#d71920]">0{index + 1}</span>
-                <span className="flex items-end justify-between gap-4">
-                  <span className="pneu-sans max-w-[280px] text-[18px] font-bold leading-6 text-[#111]">{service.label}</span>
-                  <ArrowRight aria-hidden="true" className="mb-1 size-4 shrink-0 text-[#d71920] transition-transform group-hover:translate-x-1" />
-                </span>
+              <Link className="group flex min-h-[340px] flex-col overflow-hidden border border-black/10 bg-white transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-black/20 hover:shadow-[0_18px_45px_-25px_rgba(0,0,0,0.35)]" href={`/services/${service.slug}`} key={service.slug}>
+                <div className="relative h-[210px] overflow-hidden bg-[#e8e8e6] sm:h-[230px]">
+                  <Image
+                    alt={service.imageAlt}
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                    fill
+                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                    src={service.image}
+                  />
+                  <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/10 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+                  <span className="pneu-sans absolute left-5 top-5 bg-white px-3 py-1.5 text-[10px] font-bold tracking-[0.18em] text-[#171717]">0{index + 1} / 06</span>
+                  <span aria-hidden="true" className="absolute bottom-5 right-5 grid size-10 place-items-center rounded-full bg-white text-[#e61d2a] transition-transform duration-300 group-hover:translate-x-1">
+                    <ArrowRight className="size-4" />
+                  </span>
+                </div>
+                <div className="flex flex-1 items-center justify-between gap-4 px-5 py-5 sm:px-6">
+                  <span className="pneu-sans max-w-[280px] text-[17px] font-bold leading-6 tracking-[-0.02em] text-[#111]">{service.label}</span>
+                  <span aria-hidden="true" className="h-px flex-1 bg-black/10 transition-colors group-hover:bg-[#e61d2a]/50" />
+                </div>
               </Link>
             ))}
           </div>
