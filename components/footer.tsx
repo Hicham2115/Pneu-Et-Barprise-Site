@@ -11,7 +11,7 @@ const exploreLinks = [
 
 export function Footer() {
   return (
-    <footer className="mt-16 bg-[#101010] px-[max(5.4vw,24px)] text-white md:mt-24">
+    <footer className="bg-[#101010] px-[max(5.4vw,24px)] text-white">
       <div className="mx-auto max-w-[1320px]">
         <div className="border-b border-white/10 py-16 text-center md:py-20">
           <h2 className="pneu-sans mx-auto max-w-[820px] text-[clamp(30px,4vw,48px)] font-bold leading-[1.08] tracking-[-0.04em] text-white">

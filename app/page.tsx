@@ -17,8 +17,8 @@ export default function Home() {
       <TireAdvice />
       <WhyPneu />
       <Faq />
-      <ContactCta />
       <Partners />
+      <ContactCta />
       <Footer />
     </main>
   );

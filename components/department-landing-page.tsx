@@ -157,28 +157,18 @@ export function DepartmentLandingPage({ department }: { department: DepartmentPa
         </div>
       </section>
 
-      <section className="bg-[#e61d2a] px-[max(5.4vw,24px)] py-12 text-white md:py-16">
-        <div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-between gap-8">
+      <section className="bg-[#e61d2a] px-[max(5.4vw,24px)] py-8 text-white md:py-10">
+        <div className="mx-auto flex max-w-[1320px] flex-wrap items-center justify-between gap-6">
           <div>
-            <p className="pneu-sans mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/75">Pneu · {department.name} ({department.code})</p>
-            <h2 className="pneu-sans max-w-[720px] text-[clamp(28px,4vw,42px)] font-bold leading-[1.05] tracking-[-0.04em]">
+            <p className="pneu-sans mb-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/75">Pneu · {department.name} ({department.code})</p>
+            <h2 className="pneu-sans max-w-[900px] text-[clamp(28px,4vw,42px)] font-bold leading-[1.05] tracking-[-0.04em]">
               Besoin d’une solution pour votre pneu ?
             </h2>
           </div>
-          <Link className="pneu-sans inline-flex min-h-[50px] items-center gap-4 border border-white/70 px-6 text-[14px] font-semibold text-white transition-colors hover:bg-white hover:text-[#d71920]" href="/#contact">
+          <Link className="pneu-sans inline-flex min-h-[50px] items-center gap-4 border border-white/70 px-6 text-[14px] font-semibold text-white transition-colors hover:border-white hover:bg-white/10 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white" href="/#contact">
             Nous contacter <ArrowRight aria-hidden="true" className="size-4" />
           </Link>
         </div>
-      </section>
-
-      <section className="px-[max(5.4vw,24px)] py-12">
-        <nav aria-label="Autres départements" className="mx-auto flex max-w-[1320px] flex-wrap gap-x-6 gap-y-3">
-          {departmentPages.filter((item) => item.slug !== department.slug).map((item) => (
-            <Link className="pneu-sans text-[12px] text-[#626262] underline decoration-transparent underline-offset-4 transition-colors hover:text-[#d71920] hover:decoration-[#e51d2a]" href={`/ile-de-france/${item.slug}`} key={item.slug}>
-              {item.name} ({item.code})
-            </Link>
-          ))}
-        </nav>
       </section>
 
       <Partners />
