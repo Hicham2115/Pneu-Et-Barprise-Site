@@ -14,33 +14,11 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-
-const serviceLinks = [
-  { href: "#reparation-pneus", label: "Réparation pneu dimanche" },
-  { href: "#montage-pneus", label: "Montage et changement pneu sur place" },
-  { href: "#depannage-pneus", label: "Dépannage pneu à domicile" },
-  { href: "#reparation-engins", label: "Réparation pneus engin de chantier" },
-  { href: "#pieces-auto", label: "Pièce auto" },
-  { href: "#pare-brise", label: "Fixation des pare-brises" },
-];
-
-const departmentLinks = [
-  { href: "#paris-75", label: "Dépannage pneus Paris (75)" },
-  { href: "#seine-et-marne-77", label: "Dépannage pneus Seine-et-Marne (77)" },
-  { href: "#yvelines-78", label: "Dépannage pneus Yvelines (78)" },
-  { href: "#essonne-91", label: "Dépannage pneus Essonne (91)" },
-  { href: "#hauts-de-seine-92", label: "Dépannage pneus Hauts-de-Seine (92)" },
-  {
-    href: "#seine-saint-denis-93",
-    label: "Dépannage pneus Seine-Saint-Denis (93)",
-  },
-  { href: "#val-de-marne-94", label: "Dépannage pneus Val-de-Marne (94)" },
-  { href: "#val-doise-95", label: "Dépannage pneus Val-d’Oise (95)" },
-];
+import { departmentPages, servicePages } from "@/lib/landing-pages";
 
 const mobileLinks = [
-  { href: "#conseils", label: "Conseils" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#conseils", label: "Conseils" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Component() {
@@ -50,7 +28,7 @@ export default function Component() {
         <Link
           aria-label="Pneu, accueil"
           className="group flex shrink-0 flex-col items-start"
-          href="#accueil"
+          href="/"
         >
           <span className="pneu-sans text-[37px] font-black leading-[0.85] tracking-[-0.075em] text-black max-[760px]:text-[31px]">
             PNEU
@@ -75,11 +53,11 @@ export default function Component() {
                     </p>
                   </div>
                   <ul className="grid gap-0.5">
-                    {serviceLinks.map((link) => (
-                      <li key={link.href}>
+                    {servicePages.map((link) => (
+                      <li key={link.slug}>
                         <NavigationMenuLink
                           className="pneu-sans flex-row items-center gap-3 whitespace-nowrap rounded-[2px] border-b border-black/[0.04] px-3 py-2.5 text-[13px] font-semibold leading-5 text-[#191919] transition-[color,background-color,padding] duration-200 last:border-0 hover:bg-[#fff6f6] hover:pl-4 hover:text-[#d71920] focus:bg-[#fff6f6] focus:text-[#d71920]"
-                          href={link.href}
+                          href={`/services/${link.slug}`}
                         >
                           <span
                             aria-hidden="true"
@@ -103,11 +81,11 @@ export default function Component() {
                     </p>
                   </div>
                   <ul className="grid grid-cols-1 gap-y-1">
-                    {departmentLinks.map((link) => (
-                      <li key={link.href}>
+                    {departmentPages.map((link) => (
+                      <li key={link.slug}>
                         <NavigationMenuLink
                           className="pneu-sans flex-row items-center gap-3 whitespace-nowrap rounded-[2px] border-b border-black/[0.04] px-3 py-2.5 text-[13px] font-semibold leading-5 text-[#191919] transition-colors hover:bg-[#fff6f6] hover:text-[#d71920] focus:bg-[#fff6f6] focus:text-[#d71920]"
-                          href={link.href}
+                          href={`/ile-de-france/${link.slug}`}
                         >
                           <span
                             aria-hidden="true"
@@ -138,7 +116,7 @@ export default function Component() {
           <Button
             className="pneu-sans h-[42px] rounded-[2px] bg-[#e51d2a] px-5 text-[14px] font-semibold !text-white hover:bg-[#c81521] max-[760px]:hidden"
             nativeButton={false}
-            render={<Link href="#contact" />}
+            render={<Link href="/#contact" />}
             size="lg"
           >
             <Phone aria-hidden="true" className="size-4 !text-white" />
@@ -171,11 +149,11 @@ export default function Component() {
                     <ChevronDown aria-hidden="true" className="size-4" />
                   </summary>
                   <div className="grid border-l border-[#e51d2a] ml-3 pl-2">
-                    {serviceLinks.map((link) => (
+                    {servicePages.map((link) => (
                       <Link
                         className="pneu-sans px-3 py-2 text-[13px] font-medium text-[#404040] transition-colors hover:bg-[#fff6f6] hover:text-[#d71920]"
-                        href={link.href}
-                        key={link.href}
+                        href={`/services/${link.slug}`}
+                        key={link.slug}
                       >
                         {link.label}
                       </Link>
@@ -188,11 +166,11 @@ export default function Component() {
                     <ChevronDown aria-hidden="true" className="size-4" />
                   </summary>
                   <div className="grid border-l border-[#e51d2a] ml-3 pl-2">
-                    {departmentLinks.map((link) => (
+                    {departmentPages.map((link) => (
                       <Link
                         className="pneu-sans px-3 py-2 text-[12px] font-medium text-[#404040] transition-colors hover:bg-[#fff6f6] hover:text-[#d71920]"
-                        href={link.href}
-                        key={link.href}
+                        href={`/ile-de-france/${link.slug}`}
+                        key={link.slug}
                       >
                         {link.label}
                       </Link>
@@ -210,7 +188,7 @@ export default function Component() {
                 ))}
                 <Link
                   className="mt-2 flex items-center gap-2 bg-[#e51d2a] px-3 py-3 font-sans text-sm font-semibold !text-white"
-                  href="#contact"
+                  href="/#contact"
                 >
                   <Phone aria-hidden="true" className="size-4 !text-white" />
                   Nous contacter

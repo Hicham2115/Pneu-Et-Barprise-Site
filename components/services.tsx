@@ -7,6 +7,7 @@ import {
   Wrench,
   type LucideIcon,
 } from "lucide-react";
+import Link from "next/link";
 
 const services: {
   title: string;
@@ -18,42 +19,42 @@ const services: {
     title: "Réparation de pneu",
     description:
       "Une crevaison ? Nous évaluons votre pneu et intervenons sur place quand sa réparation est possible.",
-    href: "#reparation-pneus",
+    href: "/services/reparation-pneu-dimanche",
     icon: Wrench,
   },
   {
     title: "Montage et changement",
     description:
       "Remplacement et montage de vos pneus avec un équipement professionnel.",
-    href: "#montage-pneus",
+    href: "/services/montage-changement-pneu-sur-place",
     icon: Disc3,
   },
   {
     title: "Dépannage à domicile",
     description:
       "Une assistance sur place, à domicile ou là où votre véhicule est immobilisé.",
-    href: "#depannage-pneus",
+    href: "/services/depannage-pneu-domicile",
     icon: Truck,
   },
   {
     title: "Pneus d’engins de chantier",
     description:
       "Un service adapté aux pneus d’engins de chantier et aux véhicules professionnels.",
-    href: "#reparation-engins",
+    href: "/services/reparation-pneus-engin-chantier",
     icon: Construction,
   },
   {
     title: "Pièce auto",
     description:
       "Des pièces auto pour répondre à vos besoins d’entretien et de remplacement.",
-    href: "#pieces-auto",
+    href: "/services/piece-auto",
     icon: CarFront,
   },
   {
     title: "Fixation des pare-brises",
     description:
       "Un accompagnement pour la fixation et la remise en place de pare-brises.",
-    href: "#pare-brise",
+    href: "/services/fixation-pare-brise",
     icon: PanelsTopLeft,
   },
 ];
@@ -87,9 +88,9 @@ export function Services() {
 
         <div className="grid border-l border-t border-[#dededb] sm:grid-cols-2 lg:grid-cols-3">
           {services.map(({ title, description, href, icon: Icon }) => (
-            <article
-              className="group min-h-[230px] border-b border-r border-[#dededb] bg-white/60 p-7 transition-colors duration-200 hover:bg-white md:p-8"
-              id={href.slice(1)}
+            <Link
+              className="group min-h-[230px] border-b border-r border-[#dededb] bg-white/60 p-7 transition-colors duration-200 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#e51d2a] md:p-8"
+              href={href}
               key={href}
             >
               <Icon
@@ -107,7 +108,7 @@ export function Services() {
                 aria-hidden="true"
                 className="mt-5 block h-[2px] w-8 bg-[#e51d2a] transition-[width] duration-200 group-hover:w-12"
               />
-            </article>
+            </Link>
           ))}
         </div>
       </div>
