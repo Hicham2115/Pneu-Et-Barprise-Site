@@ -62,7 +62,7 @@ export function ContactCta() {
               Votre besoin
               <input className="min-h-11 border border-black/15 bg-white px-3 text-[14px] font-normal outline-none transition-colors placeholder:text-[#999] focus:border-[#777] focus:outline-none focus:ring-0" name="problem" placeholder="Crevaison, changement…" required />
             </label>
-            <button className="pneu-sans group mt-1 inline-flex min-h-[50px] items-center justify-center gap-3 bg-[#e61d2a] px-5 text-[14px] font-semibold text-white transition-colors hover:bg-[#c81521] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e61d2a] sm:col-span-2 sm:justify-self-start" type="submit">
+            <button className="pneu-sans group mt-1 inline-flex min-h-[50px] w-full items-center justify-center gap-3 bg-[#e61d2a] px-4 text-[13px] font-semibold text-white transition-colors hover:bg-[#c81521] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e61d2a] sm:col-span-2 sm:w-auto sm:justify-self-start sm:px-5 sm:text-[14px]" type="submit">
               Envoyer la demande sur WhatsApp
               <ArrowRight aria-hidden="true" className="size-4 transition-transform group-hover:translate-x-1" />
             </button>

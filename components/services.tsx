@@ -45,7 +45,7 @@ export function Services() {
   return (
     <section
       aria-labelledby="services-title"
-      className="bg-[#f5f5f3] px-[max(5.4vw,24px)] py-20 md:py-24"
+      className="bg-[#f5f5f3] px-[max(5.4vw,24px)] py-14 sm:py-20 md:py-24"
       id="services"
     >
       <div className="mx-auto max-w-[1320px]">
@@ -71,11 +71,11 @@ export function Services() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map(({ title, href, image, imageAlt }, index) => (
             <Link
-              className="group flex min-h-[340px] flex-col overflow-hidden border border-black/10 bg-white transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-black/20 hover:shadow-[0_18px_45px_-25px_rgba(0,0,0,0.35)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e51d2a]"
+              className="group flex min-h-[280px] flex-col overflow-hidden border border-black/10 bg-white transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-black/20 hover:shadow-[0_18px_45px_-25px_rgba(0,0,0,0.35)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e51d2a] sm:min-h-[340px]"
               href={href}
               key={href}
             >
-              <div className="relative h-[210px] overflow-hidden bg-[#e8e8e6] sm:h-[230px]">
+              <div className="relative h-[180px] overflow-hidden bg-[#e8e8e6] sm:h-[230px]">
                 <Image
                   alt={imageAlt}
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"

@@ -31,7 +31,7 @@ export function Hero() {
             id="hero-title"
           >
             <span className="block">Changement</span>
-            <span className="block whitespace-nowrap">
+            <span className="block">
               de pneu <span className="text-[#e51d2a]">sans</span>
             </span>
             <span className="block text-[#e51d2a]">rendez-vous</span>

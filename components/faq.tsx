@@ -49,7 +49,7 @@ export function Faq() {
         <div className="border-b border-[#dededb]">
           {questions.map(({ question, answer }) => (
             <details className="group border-t border-[#dededb]" key={question}>
-              <summary className="pneu-sans flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-[15px] font-semibold text-[#171717] transition-colors hover:text-[#d71920] [&::-webkit-details-marker]:hidden md:text-[16px]">
+              <summary className="pneu-sans flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-[15px] font-semibold text-[#171717] transition-colors hover:text-[#d71920] [&::-webkit-details-marker]:hidden md:gap-6 md:text-[16px]">
                 {question}
                 <Plus
                   aria-hidden="true"
